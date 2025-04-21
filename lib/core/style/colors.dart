@@ -15,6 +15,12 @@ class AppColors {
   static const Color backgroundWhite60 = Color(0x99FFFFFF);
   static const Color backgroundWhite20 = Color(0x33FFFFFF);
 
+  // Primary brand colors
+  static const Color primary =
+      Color(0xFF03A4AA); // Teal color for main button and primary elements
+  static const Color disabledGrey =
+      Color(0xFFB7BCC0); // Grey for disabled buttons and elements
+
   // Semantic Colors
   static const Color backgroundSemanticGreen100 = Color(0xFF119717);
   static const Color backgroundSemanticGreen20 = Color(0xFFCFEAD1);
