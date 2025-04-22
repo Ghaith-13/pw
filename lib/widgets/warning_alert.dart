@@ -5,12 +5,12 @@ import '../core/style/spacing.dart';
 import '../core/style/radius.dart';
 import '../core/style/shadows.dart';
 
-class SuccessAlert extends StatelessWidget {
+class WarningAlert extends StatelessWidget {
   final String message;
   final VoidCallback onClose;
   final bool isVisible;
 
-  const SuccessAlert({
+  const WarningAlert({
     Key? key,
     required this.message,
     required this.onClose,
@@ -23,27 +23,27 @@ class SuccessAlert extends StatelessWidget {
 
     return Container(
       width: 328,
-      padding: EdgeInsets.symmetric(
-        horizontal: AppSpacing.spacing6,
-        vertical: AppSpacing.spacing3,
+      padding: const EdgeInsets.symmetric(
+        horizontal: 24,
+        vertical: 12,
       ),
       decoration: BoxDecoration(
-        color: const Color(0xFF1AC391).withOpacity(0.1),
+        color: const Color(0xFFF69611).withOpacity(0.1),
         borderRadius: BorderRadius.circular(16),
         border: Border.all(
-          color: const Color(0xFF1AC391),
+          color: const Color(0xFFF69611),
         ),
         boxShadow: const [
           BoxShadow(
-            color: Color(0xFFBFEADA),
+            color: Color(0xFFE9E9E9),
             blurRadius: 5,
             offset: Offset(0, 0),
           ),
         ],
       ),
       child: Row(
-        crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Row(
             children: [
@@ -54,24 +54,24 @@ class SuccessAlert extends StatelessWidget {
                   shape: BoxShape.circle,
                 ),
                 child: Icon(
-                  Icons.check_circle_outline,
+                  Icons.error_outline,
                   size: 24,
-                  color: const Color(0xFF1AC391),
+                  color: const Color(0xFFF69611),
                 ),
               ),
-              SizedBox(width: AppSpacing.spacing4),
+              const SizedBox(width: 16),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   Text(
-                    'SUCCESS!',
+                    'WARNING!',
                     style: TextStyle(
                       fontFamily: AppTypography.fontFamily,
-                      fontSize: AppTypography.bodyMSize,
-                      fontWeight: AppTypography.medium,
+                      fontSize: 14,
+                      fontWeight: FontWeight.w500,
                       height: 1.5,
-                      color: const Color(0xFF1AC391),
+                      color: const Color(0xFFF69611),
                     ),
                   ),
                   const SizedBox(height: 2),
@@ -79,10 +79,10 @@ class SuccessAlert extends StatelessWidget {
                     message,
                     style: TextStyle(
                       fontFamily: AppTypography.fontFamily,
-                      fontSize: AppTypography.bodyMSize,
-                      fontWeight: AppTypography.regular,
+                      fontSize: 14,
+                      fontWeight: FontWeight.w400,
                       height: 1.5,
-                      color: AppColors.textBlack100,
+                      color: const Color(0xFF2B2F3D),
                     ),
                   ),
                 ],
@@ -95,10 +95,10 @@ class SuccessAlert extends StatelessWidget {
               width: 20,
               height: 20,
               alignment: Alignment.center,
-              child: Icon(
+              child: const Icon(
                 Icons.close,
                 size: 20,
-                color: AppColors.textBlack100,
+                color: Color(0xFF2B2F3D),
               ),
             ),
           ),

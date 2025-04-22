@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:pw/widgets/alert_dialog.dart';
+import 'package:pw/widgets/error_alert.dart';
+import 'package:pw/widgets/information_alert.dart';
+import 'package:pw/widgets/message_alert.dart';
 import 'package:pw/widgets/set_deadline_dialog.dart';
 import 'package:pw/widgets/success_alert.dart';
+import 'package:pw/widgets/warning_alert.dart';
 import '../widgets/custom_modal_dialog.dart';
 
 class DeleteModalExampleScreen extends StatelessWidget {
@@ -10,10 +14,11 @@ class DeleteModalExampleScreen extends StatelessWidget {
   void _showDeleteDialog(BuildContext context) {
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
-        content: SuccessAlert(
-          message: "Ticket Created Successfully!",
+        content: MessageAlert(
+          title: "Ticket Created Successfully!",
+          description: "Test1234-5678",
           onClose: () {
-            ScaffoldMessenger.of(context).hideCurrentSnackBar();
+            // Handle close
           },
         ),
         backgroundColor: Colors.transparent,
