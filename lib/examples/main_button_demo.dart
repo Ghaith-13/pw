@@ -1,58 +1,59 @@
 import 'package:flutter/material.dart';
-import 'widgets/border_button.dart';
+import '../widgets/main_button.dart';
 
-/// Demo widget to showcase the BorderButton component
-class BorderButtonDemo extends StatelessWidget {
-  const BorderButtonDemo({Key? key}) : super(key: key);
+/// Demo widget to showcase the MainButton component
+class MainButtonDemo extends StatelessWidget {
+  const MainButtonDemo({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Border Button Demo'),
+        title: const Text('Main Button Demo'),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            // Basic border button
-            BorderButton(
-              text: 'Reset',
+            // Basic button
+            MainButton(
+              text: 'Login',
               onPressed: () {
+                // Handle login
                 ScaffoldMessenger.of(context).showSnackBar(
-                  const SnackBar(content: Text('Reset pressed')),
+                  const SnackBar(content: Text('Login pressed')),
                 );
               },
             ),
             const SizedBox(height: 24),
 
             // Button with leading icon
-            BorderButton(
-              text: 'Back',
-              leadingIcon: Icons.arrow_back,
+            MainButton(
+              text: 'Sign Up',
+              leadingIcon: Icons.person_add,
               onPressed: () {
                 ScaffoldMessenger.of(context).showSnackBar(
-                  const SnackBar(content: Text('Back pressed')),
+                  const SnackBar(content: Text('Sign Up pressed')),
                 );
               },
             ),
             const SizedBox(height: 24),
 
             // Button with trailing icon
-            BorderButton(
-              text: 'Next',
+            MainButton(
+              text: 'Continue',
               trailingIcon: Icons.arrow_forward,
               onPressed: () {
                 ScaffoldMessenger.of(context).showSnackBar(
-                  const SnackBar(content: Text('Next pressed')),
+                  const SnackBar(content: Text('Continue pressed')),
                 );
               },
             ),
             const SizedBox(height: 24),
 
             // Loading button
-            BorderButton(
+            MainButton(
               text: 'Loading',
               isLoading: true,
               onPressed: () {},
@@ -60,7 +61,7 @@ class BorderButtonDemo extends StatelessWidget {
             const SizedBox(height: 24),
 
             // Disabled button
-            BorderButton(
+            MainButton(
               text: 'Disabled',
               isDisabled: true,
               onPressed: () {},
@@ -68,10 +69,9 @@ class BorderButtonDemo extends StatelessWidget {
             const SizedBox(height: 24),
 
             // Custom color button
-            BorderButton(
+            MainButton(
               text: 'Custom Color',
-              borderColor: Colors.deepPurple,
-              textColor: Colors.deepPurple,
+              backgroundColor: Colors.deepPurple,
               onPressed: () {
                 ScaffoldMessenger.of(context).showSnackBar(
                   const SnackBar(content: Text('Custom button pressed')),
