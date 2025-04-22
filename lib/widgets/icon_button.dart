@@ -44,6 +44,8 @@ class AppIconButton extends StatelessWidget {
   /// Border width when hasBorder is true
   final double borderWidth;
 
+  final double? borderRadius;
+
   const AppIconButton({
     Key? key,
     this.icon,
@@ -58,6 +60,7 @@ class AppIconButton extends StatelessWidget {
     this.hasBorder = false,
     this.borderColor,
     this.borderWidth = 1.5,
+    this.borderRadius
   })  : assert(icon != null || iconWidget != null,
             'You must provide either an icon or iconWidget'),
         super(key: key);
@@ -91,13 +94,13 @@ class AppIconButton extends StatelessWidget {
       child: Material(
         color: buttonBackgroundColor,
         shape: RoundedRectangleBorder(
-          borderRadius: AppRadius.circular3,
+          borderRadius:borderRadius!=null?BorderRadius.circular(borderRadius??5): AppRadius.circular3,
           side: hasBorder
               ? BorderSide(color: buttonBorderColor, width: borderWidth)
               : BorderSide.none,
         ),
         child: InkWell(
-          borderRadius: AppRadius.circular3,
+          borderRadius:borderRadius!=null?BorderRadius.circular(borderRadius??5): AppRadius.circular3,
           onTap: isDisabled || isLoading ? null : onPressed,
           child: Center(
             child: isLoading

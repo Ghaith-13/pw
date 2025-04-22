@@ -3,7 +3,8 @@ import 'package:flutter/material.dart';
 class AppRadius {
   static const double round0 = 0.0;
   static const double round3 = 16.0;
-  static const double round5 = 24.0;
+  static const double round5 = 5.0;
+  static const double round24 = 24.0;
   static const double round6 = 32.0;
 
   // Commonly used BorderRadius
