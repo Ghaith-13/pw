@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'icon_button.dart';
+import 'package:pw/widgets/icon_button.dart';
 import '../core/style/colors.dart';
 
 class IconButtonDemo extends StatelessWidget {
